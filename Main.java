@@ -15,5 +15,13 @@ class Main {
 		System.out.println(list.head.next.next.data);
 		System.out.println(list.head.next.next.next.data);
 		System.out.println(list.head.next.next.next.next.data);
+		System.out.println(list.pop());
+		System.out.println(list.head.data);
+		System.out.println(list.pop());
+		System.out.println(list.head.data);
+		System.out.println(list.pop());
+		System.out.println(list.head.data);
+		System.out.println(list.pop());
+		System.out.println(list.head.data);
 	}
 }

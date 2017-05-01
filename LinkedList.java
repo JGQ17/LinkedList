@@ -29,4 +29,10 @@ class LinkedList {
 		start.next = head;
 		head = start;
 	}
+
+	public int pop() {
+		int val = head.data;
+		head = head.next;
+		return val;
+	}
 }
