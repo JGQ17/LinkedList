@@ -7,8 +7,7 @@ class LinkedList {
 
 	public void push(int val) {
 		if (head == null) {
-			Node node1 = new Node(val);
-			head = node1;
+			head = new Node(val);
 		}
 		else if (head != null) {
 			Node storage = head;
@@ -22,5 +21,9 @@ class LinkedList {
 		then we will create a new node and set the reference in the last object in
 		the list to the new node we just created
 		*/
+	}
+
+	public void pushFront(int val) {
+
 	}
 }
