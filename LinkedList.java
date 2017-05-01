@@ -16,26 +16,23 @@ class LinkedList {
 			}
 			storage.next = new Node(val);
 		}
-		/*
-		Our condition is that if the last node in the list has a reference to null
-		then we will create a new node and set the reference in the last object in
-		the list to the new node we just created
-		*/
 	}
 	
-	//pushFront(): ads a node at the front
+	//pushFront(): adds a node at the front
 	public void pushFront(int val) {
 		Node start = new Node(val);
 		start.next = head;
 		head = start;
 	}
 
+	//pop(): removes a node at the front
 	public int pop() {
 		int val = head.data;
 		head = head.next;
 		return val;
 	}
 
+	//popBack(): remves a node a t the end
 	public int popBack() {
 		Node storage = head;
 		while (storage.next.next != null) {
@@ -46,23 +43,28 @@ class LinkedList {
 		return val;
 	}
 
+	//remove(): removes a node
 	public boolean remove(int x) {
 		Node storage = head;
 		boolean match = false;
 		if(x == head.data) {
 			head = head.next;
 			match = true;
+			storage = head;
 		}
+
 		while (storage.next != null) {
 			if(x == storage.next.data) {
 				storage.next = storage.next.next;
 				match = true;
+				continue;
 			} 
 			storage = storage.next;
 		}
 		return match;
 	}
 
+	//find(): finds a node
 	public boolean find(int val) {
 		Node storage = head;
 		boolean match = false;
@@ -75,6 +77,7 @@ class LinkedList {
 		return match;
 	}
 
+	//length(): shows the length of the list of nodes
 	public int length() {
 		int counter = 0;
 		for(Node storage = head; storage != null; counter++) {
@@ -83,12 +86,13 @@ class LinkedList {
 		return counter;
 	}
 
-	// public void showList() {
-	// 	Node storage = head;
-	// 	while (storage.next != null) {
-	// 		System.out.println(storage.data);
-	// 		storage = storage.next;
-	// 	}
-	// 	System.out.println(storage.data);
-	// }
+	//showList(): displays the nodes' values
+	public void showList() {
+		Node storage = head;
+		while (storage.next != null) {
+			System.out.print(storage.data + " ");
+			storage = storage.next;
+		}
+		System.out.println(storage.data);
+	}
 }
