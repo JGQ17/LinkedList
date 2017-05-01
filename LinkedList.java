@@ -4,7 +4,7 @@ class LinkedList {
 	LinkedList() {
 		head = null;
 	}
-
+	//push(): adds a node at the end
 	public void push(int val) {
 		if (head == null) {
 			head = new Node(val);
@@ -22,8 +22,11 @@ class LinkedList {
 		the list to the new node we just created
 		*/
 	}
-
+	
+	//pushFront(): ads a node at the front
 	public void pushFront(int val) {
-
+		Node start = new Node(val);
+		start.next = head;
+		head = start;
 	}
 }
