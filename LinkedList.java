@@ -46,20 +46,22 @@ class LinkedList {
 		return val;
 	}
 
-	// public boolean remove(int x) {
-	// 	Node storage = head;
-	// 	boolean match = false;
-	// 	while (storage.next != null) {
-	// 		if(x == storage.data) {
-	// 			Node rem = storage.next;
-	// 			storage = storage.next;
-	// 			rem = null;
-	// 			match = true;
-	// 		} 
-	// 		storage = storage.next;
-	// 	}
-	// 	return match;
-	// }
+	public boolean remove(int x) {
+		Node storage = head;
+		boolean match = false;
+		if(x == head.data) {
+			head = head.next;
+			match = true;
+		}
+		while (storage.next != null) {
+			if(x == storage.next.data) {
+				storage.next = storage.next.next;
+				match = true;
+			} 
+			storage = storage.next;
+		}
+		return match;
+	}
 
 	public boolean find(int val) {
 		Node storage = head;
