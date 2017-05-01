@@ -35,4 +35,18 @@ class LinkedList {
 		head = head.next;
 		return val;
 	}
+
+	public int popBack() {
+		Node storage = head;
+		while (storage.next != null) {
+			storage = storage.next;
+		}
+		int val = storage.data;
+		storage = head;
+		while (storage.next.next != null) {
+			storage = storage.next;
+		}
+		storage.next = null;
+		return val;
+	}
 }
