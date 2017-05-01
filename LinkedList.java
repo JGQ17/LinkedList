@@ -38,15 +38,55 @@ class LinkedList {
 
 	public int popBack() {
 		Node storage = head;
-		while (storage.next != null) {
-			storage = storage.next;
-		}
-		int val = storage.data;
-		storage = head;
 		while (storage.next.next != null) {
 			storage = storage.next;
 		}
+		int val = storage.next.data;
 		storage.next = null;
 		return val;
 	}
+
+	// public boolean remove(int x) {
+	// 	Node storage = head;
+	// 	boolean match = false;
+	// 	while (storage.next != null) {
+	// 		if(x == storage.data) {
+	// 			Node rem = storage.next;
+	// 			storage = storage.next;
+	// 			rem = null;
+	// 			match = true;
+	// 		} 
+	// 		storage = storage.next;
+	// 	}
+	// 	return match;
+	// }
+
+	public boolean find(int val) {
+		Node storage = head;
+		boolean match = false;
+		while (storage.next != null) {
+			if(val == storage.data) {
+				match = true;
+			} 
+			storage = storage.next;
+		}
+		return match;
+	}
+
+	public int length() {
+		int counter = 0;
+		for(Node storage = head; storage != null; counter++) {
+			storage = storage.next;
+		}
+		return counter;
+	}
+
+	// public void showList() {
+	// 	Node storage = head;
+	// 	while (storage.next != null) {
+	// 		System.out.println(storage.data);
+	// 		storage = storage.next;
+	// 	}
+	// 	System.out.println(storage.data);
+	// }
 }

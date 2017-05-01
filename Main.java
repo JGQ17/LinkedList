@@ -15,10 +15,15 @@ class Main {
 		System.out.println(list.head.next.next.data);
 		System.out.println(list.head.next.next.next.data);
 		System.out.println(list.head.next.next.next.next.data);
-		System.out.println(list.popBack());
-		System.out.println(list.popBack());
-		System.out.println(list.popBack());
-		System.out.println(list.popBack());
+
+	
+		System.out.println(list.find(13));
+		System.out.println(list.head.data);
+		System.out.println(list.head.next.data);
+		System.out.println(list.head.next.next.data);
+		System.out.println(list.head.next.next.next.data);
+	
+		System.out.println(list.length());
 		
 	}
 }
