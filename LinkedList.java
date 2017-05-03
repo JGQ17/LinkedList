@@ -32,7 +32,7 @@ class LinkedList {
 		return val;
 	}
 
-	//popBack(): remves a node a t the end
+	//popBack(): removes a node at the end
 	public int popBack() {
 		Node storage = head;
 		while (storage.next.next != null) {
@@ -43,7 +43,7 @@ class LinkedList {
 		return val;
 	}
 
-	//remove(): removes a node
+	//remove(): removes all nodes with data value = x
 	public boolean remove(int x) {
 		Node storage = head;
 		boolean match = false;
@@ -64,7 +64,7 @@ class LinkedList {
 		return match;
 	}
 
-	//find(): finds a node
+	//find(): finds a node with data value = val
 	public boolean find(int val) {
 		Node storage = head;
 		boolean match = false;
@@ -94,5 +94,34 @@ class LinkedList {
 			storage = storage.next;
 		}
 		System.out.println(storage.data);
+	}
+
+	/*
+	This is a pretty complicated method.
+	Try to go through this again in the future once you've forgotten 
+	until you can understand it again.
+	*/
+	//delDupl(): deletes duplicate values from linked list
+	public void delDupl() {
+		Node storage1 = head;
+		while (storage1 != null && storage1.next != null) {
+			showList();
+			Node storage2 = storage1;
+			while (storage2.next != null) {
+				showList();
+				if (storage1.data == storage2.next.data) {
+					if (storage2.next.next != null) {
+						storage2.next = storage2.next.next;
+						continue;
+					}
+					else {
+						storage2.next = null;
+						continue;
+					}
+				}
+				storage2 = storage2.next;
+			}
+			storage1 = storage1.next;
+		}
 	}
 }
